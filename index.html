@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger House - A Melhor Hamburgueria da Cidade</title>
+    <meta name="description" content="Descubra os melhores hambúrgueres artesanais da cidade. Ingredientes frescos, sabor incomparável e entrega rápida.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>🍔 Burger House</h2>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cardapio" class="nav-link">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sobre" class="nav-link">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contato" class="nav-link">Contato</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                    <div class="nav-toggle" id="nav-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Os Melhores Hambúrgueres da Cidade</h1>
+                <p class="hero-description">Ingredientes frescos, sabor incomparável e a tradição que você já conhece. Experimente nossos hambúrgueres artesanais feitos com muito amor.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('cardapio')">Ver Cardápio</button>
+                    <button class="btn btn-secondary">Fazer Pedido</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-burger">
+                    <div class="burger-layer burger-top"></div>
+                    <div class="burger-layer burger-lettuce"></div>
+                    <div class="burger-layer burger-tomato"></div>
+                    <div class="burger-layer burger-meat"></div>
+                    <div class="burger-layer burger-cheese"></div>
+                    <div class="burger-layer burger-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio Section -->
+    <section class="menu" id="cardapio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nosso Cardápio</h2>
+                <p class="section-description">Escolha entre nossos deliciosos hambúrgueres, acompanhamentos e bebidas</p>
+            </div>
+            
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="burgers">Hambúrgueres</button>
+                <button class="filter-btn" data-filter="sides">Acompanhamentos</button>
+                <button class="filter-btn" data-filter="drinks">Bebidas</button>
+                <button class="filter-btn" data-filter="desserts">Sobremesas</button>
+            </div>
+
+            <div class="menu-grid" id="menu-grid">
+                <!-- Hambúrgueres -->
+                <div class="menu-item" data-category="burgers">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image burger-img">🍔</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Burger Clássico</h3>
+                        <p class="menu-item-description">Pão brioche, hambúrguer 180g, queijo, alface, tomate e molho especial</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 24,90</span>
+                            <button class="add-to-cart-btn" data-name="Burger Clássico" data-price="24.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="burgers">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image burger-img">🍔</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Burger Bacon</h3>
+                        <p class="menu-item-description">Pão brioche, hambúrguer 180g, bacon crocante, queijo cheddar e cebola caramelizada</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 29,90</span>
+                            <button class="add-to-cart-btn" data-name="Burger Bacon" data-price="29.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="burgers">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image burger-img">🍔</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Burger Duplo</h3>
+                        <p class="menu-item-description">Pão brioche, dois hambúrgueres 180g, queijo duplo, alface e molho barbecue</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 34,90</span>
+                            <button class="add-to-cart-btn" data-name="Burger Duplo" data-price="34.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acompanhamentos -->
+                <div class="menu-item" data-category="sides">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image sides-img">🍟</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Batata Frita</h3>
+                        <p class="menu-item-description">Batatas cortadas na hora, temperadas com sal especial</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 12,90</span>
+                            <button class="add-to-cart-btn" data-name="Batata Frita" data-price="12.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sides">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image sides-img">🧅</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Onion Rings</h3>
+                        <p class="menu-item-description">Anéis de cebola empanados e fritos, servidos com molho ranch</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 15,90</span>
+                            <button class="add-to-cart-btn" data-name="Onion Rings" data-price="15.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bebidas -->
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image drinks-img">🥤</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Refrigerante</h3>
+                        <p class="menu-item-description">Coca-Cola, Pepsi, Guaraná ou Sprite - 350ml</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 6,90</span>
+                            <button class="add-to-cart-btn" data-name="Refrigerante" data-price="6.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image drinks-img">🧃</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Suco Natural</h3>
+                        <p class="menu-item-description">Laranja, limão, maracujá ou acerola - 400ml</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 8,90</span>
+                            <button class="add-to-cart-btn" data-name="Suco Natural" data-price="8.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sobremesas -->
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-image">
+                        <div class="placeholder-image desserts-img">🍰</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Milkshake</h3>
+                        <p class="menu-item-description">Cremoso milkshake de chocolate, morango ou baunilha</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">R$ 14,90</span>
+                            <button class="add-to-cart-btn" data-name="Milkshake" data-price="14.90">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre a Burger House</h2>
+                    <p class="about-description">
+                        Desde 2015, a Burger House tem se dedicado a criar os melhores hambúrgueres artesanais da cidade. 
+                        Nossa paixão pela culinária e pelo atendimento de qualidade nos tornou referência no segmento.
+                    </p>
+                    <p class="about-description">
+                        Utilizamos apenas ingredientes frescos e selecionados, carnes de primeira qualidade e pães 
+                        artesanais feitos diariamente. Cada hambúrguer é preparado com carinho e atenção aos detalhes.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number">50k+</h3>
+                            <p class="stat-label">Clientes Satisfeitos</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">8</h3>
+                            <p class="stat-label">Anos de Experiência</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">15</h3>
+                            <p class="stat-label">Tipos de Hambúrgueres</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="placeholder-image about-img">🏪</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-description">Estamos aqui para atendê-lo da melhor forma possível</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Endereço</h3>
+                            <p>Rua das Delícias, 123<br>Centro - São Paulo, SP</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Telefone</h3>
+                            <p>(11) 9999-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horário de Funcionamento</h3>
+                            <p>Segunda a Domingo<br>18h às 23h</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">🍔 Burger House</h3>
+                    <p class="footer-description">
+                        Os melhores hambúrgueres artesanais da cidade, feitos com ingredientes frescos e muito amor.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cardapio">Cardápio</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contato</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua das Delícias, 123</p>
+                        <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                        <p><i class="fas fa-envelope"></i> contato@burgerhouse.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Burger House. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Seu Pedido</h3>
+                <span class="close-modal" id="close-cart">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <p class="empty-cart">Seu carrinho está vazio</p>
+                </div>
+                <div class="cart-total" id="cart-total" style="display: none;">
+                    <strong>Total: R$ <span id="total-amount">0,00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="clear-cart">Limpar Carrinho</button>
+                <button class="btn btn-primary" id="checkout-btn">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
